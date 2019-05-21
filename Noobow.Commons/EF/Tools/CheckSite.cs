@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace SiteUpdateChecker.EF
+namespace Noobow.Commons.EF.Tools
 {
     [Table("CHECK_SITE")]
     public class CheckSite
