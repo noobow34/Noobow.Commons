@@ -17,6 +17,7 @@ namespace Noobow.Commons.EF
         public virtual DbSet<NotificationTask> NotificationTasks { get; set; }
 
         public ToolsContext(DbContextOptions<ToolsContext> options) : base(options) { }
+        public ToolsContext() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
