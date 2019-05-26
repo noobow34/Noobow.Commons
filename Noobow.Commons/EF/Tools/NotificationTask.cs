@@ -23,5 +23,8 @@ namespace Noobow.Commons.EF.Tools
 
         [Column("STATUS")]
         public NotificationTaskStatusEnum Status { get; set; }
+
+        [Column("NOTIFICATION_TO")]
+        public string NotificationTo { get; set; }
     }
 }
