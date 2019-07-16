@@ -30,5 +30,8 @@ namespace Noobow.Commons.EF.Twitter
         [Column("FOLLOWS_TYPE")]
         public FollowsTypeEnum FollowsType { get; set; }
 
+        [Column("STATUS")]
+        public FollowsStatusEnum Status { get; set; }
+
     }
 }

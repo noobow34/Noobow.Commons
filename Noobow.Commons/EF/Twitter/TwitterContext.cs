@@ -36,6 +36,10 @@ namespace Noobow.Commons.EF.Twitter
                .Property(c => c.FollowsType)
                .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<FollowsTypeEnum>());
 
+            modelBuilder.Entity<FollowsUser>()
+               .Property(c => c.Status)
+               .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<FollowsStatusEnum>());
+
             modelBuilder.Entity<FollowsEvent>()
                 .Property(n => n.EventType)
                 .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<FollowsEventTypeEnum>());
