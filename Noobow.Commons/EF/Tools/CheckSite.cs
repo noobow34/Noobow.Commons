@@ -32,5 +32,8 @@ namespace Noobow.Commons.EF.Tools
 
         [Column("LAST_UPDATE")]
         public DateTime? LastUpdate { get; set; }
+
+        [Column("SCHEDULE")]
+        public string Schedule { get; set; }
     }
 }
