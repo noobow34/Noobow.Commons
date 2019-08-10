@@ -7,6 +7,8 @@ using EnumStringValues;
 using SiteUpdateChecker.Constants;
 using Noobow.Commons.EF.Tools;
 using Noobow.Commons.Constants;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Noobow.Commons.EF
 {
@@ -22,9 +24,16 @@ namespace Noobow.Commons.EF
         {
             if (!optionsBuilder.IsConfigured)
             {
+                IServiceCollection serviceCollection = new ServiceCollection();
+                serviceCollection.AddLogging(builder => builder
+                .AddConsole()
+                .AddFilter(level => level >= LogLevel.Information)
+                );
+                var loggerFactory = serviceCollection.BuildServiceProvider().GetService<ILoggerFactory>();
+
                 var config = new ConfigurationBuilder().SetBasePath(System.AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("ToolsConnection");
-                optionsBuilder.UseMySql(connectionString,
+                optionsBuilder.UseLoggerFactory(loggerFactory).UseMySql(connectionString,
                         mySqlOptions =>
                         {
                             mySqlOptions.ServerVersion(new Version(10, 3), ServerType.MariaDb);
