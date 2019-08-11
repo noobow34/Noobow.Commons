@@ -33,7 +33,7 @@ namespace Noobow.Commons.EF
 
                 var config = new ConfigurationBuilder().SetBasePath(System.AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("ToolsConnection");
-                optionsBuilder.UseLoggerFactory(loggerFactory).UseMySql(connectionString,
+                optionsBuilder.UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().UseMySql(connectionString,
                         mySqlOptions =>
                         {
                             mySqlOptions.ServerVersion(new Version(10, 3), ServerType.MariaDb);
