@@ -24,16 +24,16 @@ namespace Noobow.Commons.EF
         {
             if (!optionsBuilder.IsConfigured)
             {
-                IServiceCollection serviceCollection = new ServiceCollection();
+                /*IServiceCollection serviceCollection = new ServiceCollection();
                 serviceCollection.AddLogging(builder => builder
                 .AddConsole()
                 .AddFilter(level => level >= LogLevel.Information)
                 );
-                var loggerFactory = serviceCollection.BuildServiceProvider().GetService<ILoggerFactory>();
+                var loggerFactory = serviceCollection.BuildServiceProvider().GetService<ILoggerFactory>();*/
 
                 var config = new ConfigurationBuilder().SetBasePath(System.AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("ToolsConnection");
-                optionsBuilder.UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().UseMySql(connectionString,
+                optionsBuilder./*UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().*/UseMySql(connectionString,
                         mySqlOptions =>
                         {
                             mySqlOptions.ServerVersion(new Version(10, 3), ServerType.MariaDb);
