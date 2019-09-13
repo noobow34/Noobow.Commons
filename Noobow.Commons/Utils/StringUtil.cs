@@ -13,7 +13,7 @@ namespace Noobow.Commons.Utils
             return ss.Any(c => s.Contains(c));
         }
 
-        public static Boolean ContainsMetaCharacter(string s)
+        public static bool ContainsMetaCharacter(string s)
         {
             return ContainsAny(metaCharacters, s);
         }
