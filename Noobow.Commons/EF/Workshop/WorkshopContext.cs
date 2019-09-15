@@ -15,7 +15,7 @@ namespace Noobow.Commons.EF
     public class WorkshopContext : DbContext
     {
 
-        public virtual DbSet<CheckSite> CheckSites { get; set; }
+        public virtual DbSet<PerformanceTest> PerformanceTests { get; set; }
 
         public WorkshopContext(DbContextOptions<WorkshopContext> options) : base(options) { }
 
