@@ -12,7 +12,8 @@ namespace Noobow.Commons.EF.Twitter
 
         public virtual DbSet<FollowsUser> FollowsUsers { get; set; }
         public virtual DbSet<FollowsEvent> FollowsEvents { get; set; }
-
+        public virtual DbSet<FollowsSummary> FollowsSummarys { get; set; }
+        public virtual DbSet<FollowsView> FollowsView { get; set; }
         public TwitterContext(DbContextOptions<TwitterContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
