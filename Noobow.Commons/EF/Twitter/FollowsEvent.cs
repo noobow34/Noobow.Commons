@@ -23,6 +23,6 @@ namespace Noobow.Commons.EF.Twitter
         public FollowsEventTypeEnum EventType { get; set; }
 
         [Column("SAME_HISTORY_COUNT")]
-        public int SameHistoryCount { get; set; }
+        public int? SameHistoryCount { get; set; }
     }
 }

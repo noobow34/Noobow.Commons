@@ -36,7 +36,7 @@ namespace Noobow.Commons.EF.Twitter
         public string Name { get; set; }
 
         [Column("SAME_HISTORY_COUNT")]
-        public int SameHistoryCount { get; set; }
+        public int? SameHistoryCount { get; set; }
 
     }
 }
