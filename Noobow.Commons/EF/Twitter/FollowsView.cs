@@ -38,5 +38,8 @@ namespace Noobow.Commons.EF.Twitter
         [Column("SAME_HISTORY_COUNT")]
         public int? SameHistoryCount { get; set; }
 
+        [NotMapped]
+        public string EventDateDisp { get { return EventDate.ToString("MM/dd HH:mm"); } }
+
     }
 }
