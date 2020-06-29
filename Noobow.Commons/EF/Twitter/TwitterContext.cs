@@ -27,7 +27,7 @@ namespace Noobow.Commons.EF.Twitter
                 );
                 var loggerFactory = serviceCollection.BuildServiceProvider().GetService<ILoggerFactory>();*/
 
-                var config = new ConfigurationBuilder().SetBasePath(System.AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
+                var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("TwitterConnection");
                 optionsBuilder.UseMySql(connectionString,
                         mySqlOptions =>

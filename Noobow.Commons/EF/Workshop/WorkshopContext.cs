@@ -30,7 +30,7 @@ namespace Noobow.Commons.EF
                 );
                 var loggerFactory = serviceCollection.BuildServiceProvider().GetService<ILoggerFactory>();*/
 
-                var config = new ConfigurationBuilder().SetBasePath(System.AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
+                var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("WorkshopConnection");
                 optionsBuilder./*UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().*/UseMySql(connectionString,
                         mySqlOptions =>
