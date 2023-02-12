@@ -1,7 +1,4 @@
 ﻿using EnumStringValues;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Noobow.Commons.Constants
 {

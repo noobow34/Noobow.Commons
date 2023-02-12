@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Noobow.Commons.Constants
+﻿namespace Noobow.Commons.Constants
 {
     public static class LineUserIdConstant
     {

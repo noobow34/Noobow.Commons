@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Microsoft.Extensions.Configuration;
-using System.IO;
 using EnumStringValues;
 using SiteUpdateChecker.Constants;
 using Noobow.Commons.EF.Tools;
 using Noobow.Commons.Constants;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace Noobow.Commons.EF
 {
