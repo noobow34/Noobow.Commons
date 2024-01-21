@@ -5,24 +5,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Noobow.Commons.EF.Tools
 {
-    [Table("NOTIFICATION_TASK")]
+    [Table("notification_task")]
     public class NotificationTask
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("TASK_ID")]
+        [Column("task_id")]
         public int TaskId { get; set; }
 
-        [Column("NOTIFICATION_DETAIL")]
+        [Column("notification_detail")]
         public string NotificationDetail { get; set; }
 
-        [Column("NOTIFICATION_TIME")]
+        [Column("notification_time")]
         public DateTime? NotificationTime { get; set; }
 
-        [Column("STATUS")]
+        [Column("status")]
         public NotificationTaskStatusEnum Status { get; set; }
 
-        [Column("NOTIFICATION_TO")]
+        [Column("notification_to")]
         public string NotificationTo { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace Noobow.Commons.EF
 
                 var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("ToolsConnection");
-                optionsBuilder./*UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().*/UseMySql(connectionString, new MariaDbServerVersion(new Version(10, 4)));
+                optionsBuilder./*UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().*/UseNpgsql(connectionString);
             }
         }
 
