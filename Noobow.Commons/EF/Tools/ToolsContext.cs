@@ -14,7 +14,7 @@ namespace Noobow.Commons.EF
         public virtual DbSet<CheckSite> CheckSites { get; set; }
         public virtual DbSet<NotificationTask> NotificationTasks { get; set; }
 
-        public ToolsContext(DbContextOptions<ToolsContext> options) : base(options) { }
+        public ToolsContext(DbContextOptions<ToolsContext> options) : base(options) => AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,7 +29,7 @@ namespace Noobow.Commons.EF
 
                 var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("ToolsConnection");
-                optionsBuilder./*UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().*/UseMySql(connectionString, new MariaDbServerVersion(new Version(10, 4)));
+                optionsBuilder./*UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().*/UseNpgsql(connectionString);
             }
         }
 

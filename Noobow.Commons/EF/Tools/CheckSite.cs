@@ -5,33 +5,33 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Noobow.Commons.EF.Tools
 {
-    [Table("CHECK_SITE")]
+    [Table("check_site")]
     public class CheckSite
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("SITE_ID")]
+        [Column("site_id")]
         public int SiteId { get; set; }
 
-        [Column("URL")]
+        [Column("url")]
         public string Url { get; set; }
 
-        [Column("SITE_NAME")]
+        [Column("site_name")]
         public string SiteName { get; set; }
 
-        [Column("CHECK_TYPE")]
+        [Column("check_type")]
         public CheckTypeEnum? CheckType { get; set; }
 
-        [Column("CHECK_IDENTIFIER")]
+        [Column("check_identifier")]
         public string CheckIdentifier { get; set; }
 
-        [Column("LAST_CHECK")]
+        [Column("last_check")]
         public DateTime? LastCheck { get; set; }
 
-        [Column("LAST_UPDATE")]
+        [Column("last_update")]
         public DateTime? LastUpdate { get; set; }
 
-        [Column("SCHEDULE")]
+        [Column("schedule")]
         public string Schedule { get; set; }
     }
 }
