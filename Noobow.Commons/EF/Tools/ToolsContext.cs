@@ -12,7 +12,6 @@ namespace Noobow.Commons.EF
     {
 
         public virtual DbSet<CheckSite> CheckSites { get; set; }
-        public virtual DbSet<NotificationTask> NotificationTasks { get; set; }
 
         public ToolsContext(DbContextOptions<ToolsContext> options) : base(options) => AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
@@ -20,16 +19,9 @@ namespace Noobow.Commons.EF
         {
             if (!optionsBuilder.IsConfigured)
             {
-                /*IServiceCollection serviceCollection = new ServiceCollection();
-                serviceCollection.AddLogging(builder => builder
-                .AddConsole()
-                .AddFilter(level => level >= LogLevel.Information)
-                );
-                var loggerFactory = serviceCollection.BuildServiceProvider().GetService<ILoggerFactory>();*/
-
                 var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
                 var connectionString = config.GetConnectionString("ToolsConnection");
-                optionsBuilder./*UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging().*/UseNpgsql(connectionString);
+                optionsBuilder.UseNpgsql(connectionString);
             }
         }
 
@@ -38,10 +30,6 @@ namespace Noobow.Commons.EF
             modelBuilder.Entity<CheckSite>()
                .Property(c => c.CheckType)
                .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<CheckTypeEnum>());
-
-            modelBuilder.Entity<NotificationTask>()
-                .Property(n => n.Status)
-                .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<NotificationTaskStatusEnum>());
         }
 
     }
