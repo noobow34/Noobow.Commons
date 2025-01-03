@@ -13,6 +13,8 @@ namespace Noobow.Commons.Constants
         [StringValue("C087844ETGU")]
         library,
         [StringValue("C0873C925BP")]
-        SiteUpdate
+        SiteUpdate,
+        [StringValue("C0876AN1RNE")]
+        TwilogUpdater
     }
 }
