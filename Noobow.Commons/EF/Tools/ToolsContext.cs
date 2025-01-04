@@ -14,6 +14,7 @@ namespace Noobow.Commons.EF
         public virtual DbSet<CheckSite> CheckSites { get; set; }
 
         public ToolsContext(DbContextOptions<ToolsContext> options) : base(options) => AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        public ToolsContext() : base() => AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
