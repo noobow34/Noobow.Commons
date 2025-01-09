@@ -1,6 +1,6 @@
 ﻿using EnumStringValues;
 
-namespace SiteUpdateChecker.Constants
+namespace Noobow.Commons.Constants
 {
     public enum CheckTypeEnum
     {

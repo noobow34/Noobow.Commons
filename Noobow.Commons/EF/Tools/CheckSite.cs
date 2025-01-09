@@ -1,4 +1,4 @@
-﻿using SiteUpdateChecker.Constants;
+﻿using Noobow.Commons.Constants;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

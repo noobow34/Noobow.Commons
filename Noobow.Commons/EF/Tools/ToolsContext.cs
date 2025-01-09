@@ -2,7 +2,6 @@
 using System;
 using Microsoft.Extensions.Configuration;
 using EnumStringValues;
-using SiteUpdateChecker.Constants;
 using Noobow.Commons.EF.Tools;
 using Noobow.Commons.Constants;
 
