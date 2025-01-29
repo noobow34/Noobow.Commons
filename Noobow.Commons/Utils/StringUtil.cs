@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Noobow.Commons.Utils
+﻿namespace Noobow.Commons.Utils
 {
     public static class StringUtil
     {
