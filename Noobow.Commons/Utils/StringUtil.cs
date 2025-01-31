@@ -2,7 +2,7 @@
 {
     public static class StringUtil
     {
-        private static readonly string[] metaCharacters = new string[] { "^", "$", ".", "*", "+", "?", "(", ")", "{", "}", "[", "]", "^" };
+        private static readonly string[] metaCharacters = ["^", "$", ".", "*", "+", "?", "(", ")", "{", "}", "[", "]", "^"];
 
         public static bool ContainsAny(IEnumerable<string> ss, string s)
         {
