@@ -4,7 +4,7 @@
     {
         private static readonly string[] metaCharacters = new string[] { "^", "$", ".", "*", "+", "?", "(", ")", "{", "}", "[", "]", "^" };
 
-        public static bool ContainsAny(IEnumerable<string> ss,string s)
+        public static bool ContainsAny(IEnumerable<string> ss, string s)
         {
             return ss.Any(c => s.Contains(c));
         }

@@ -8,7 +8,7 @@ namespace Noobow.Commons.EF.Multi;
 public partial class MultiContext : DbContext
 {
     public MultiContext() => AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-    public MultiContext(DbContextOptions<MultiContext> options) : base(options) => AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);        
+    public MultiContext(DbContextOptions<MultiContext> options) : base(options) => AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
     public virtual DbSet<Book> Books { get; set; }
     public virtual DbSet<BookMachida> BookMachidas { get; set; }

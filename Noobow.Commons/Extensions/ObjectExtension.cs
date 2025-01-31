@@ -6,11 +6,12 @@ namespace Noobow.Commons.Extensions
     {
         private static readonly ConditionalWeakTable<object, string> _instanceIdList = [];
 
-        public static void JournalWriteLine(this object obj,string value)
+        public static void JournalWriteLine(this object obj, string value)
         {
-            if (!_instanceIdList.TryGetValue(obj,out string? instanceId)){
+            if (!_instanceIdList.TryGetValue(obj, out string? instanceId))
+            {
                 instanceId = Ulid.NewUlid().ToString();
-                _instanceIdList.Add(obj,instanceId);
+                _instanceIdList.Add(obj, instanceId);
             }
             Console.WriteLine($"【{obj.GetType().Name}:{instanceId}】{value}");
         }

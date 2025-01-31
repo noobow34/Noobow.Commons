@@ -6,7 +6,7 @@ namespace Noobow.Commons.Utils
     public static class SlackUtil
     {
         private static ISlackApiClient? _slackClient;
-        public static async Task PostAsync(string channel,string text)
+        public static async Task PostAsync(string channel, string text)
         {
             if (_slackClient == null)
             {
