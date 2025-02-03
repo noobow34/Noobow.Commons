@@ -14,4 +14,7 @@ public partial class SchedulerDef
     [Column("cron_def")]
     [StringLength(100)]
     public required string CronDef { get; set; }
+
+    [Column("enabled")]
+    public required bool Enabled { get;set; }
 }
