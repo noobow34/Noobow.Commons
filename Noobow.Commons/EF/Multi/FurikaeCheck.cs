@@ -23,4 +23,7 @@ public partial class FurikaeCheck
     [Column("schedule_id")]
     [StringLength(32)]
     public string? ScheduleId { get; set; }
+
+    [Column("info_id")]
+    public int InfoId { get;set; }
 }
