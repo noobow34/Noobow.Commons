@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Noobow.Commons.Constants;
+using System.ComponentModel.DataAnnotations;
 
 namespace Noobow.Commons.EF.Multi;
 
@@ -18,6 +19,8 @@ public partial class MultiContext : DbContext
     public virtual DbSet<SchedulerDef> SchedulerDefs { get; set; }
     public virtual DbSet<LibraryStatus> LibraryStatuses { get; set; }
     public virtual DbSet<CheckSite> CheckSites { get; set; }
+
+    public virtual DbSet<MegalosUserInfo> MegalosUserInfos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
