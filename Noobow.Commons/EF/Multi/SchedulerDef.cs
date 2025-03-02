@@ -6,7 +6,13 @@ namespace Noobow.Commons.EF.Multi;
 [Table("scheduler_def")]
 public partial class SchedulerDef
 {
+
     [Key]
+    [Column("schedule_id")]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int ScheduleId { get; set; }
+
+    public int InfoId { get; set; }
     [Column("class_name")]
     [StringLength(200)]
     public string ClassName { get; set; } = null!;
