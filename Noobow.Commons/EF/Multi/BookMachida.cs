@@ -10,8 +10,7 @@ public partial class BookMachida
     [Column("id")]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    [Column("book_id")]
-    public string BookId { get; set; } = null!;
+
     [Column("book_name")]
     public string BookName { get; set; } = null!;
 
