@@ -10,8 +10,7 @@ namespace Noobow.Commons.Utils
         {
             if (_slackClient == null)
             {
-                var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
-                string? token = config["SlackToken"];
+                string? token = Environment.GetEnvironmentVariable("SLACK_BOT_TOKEN");
                 _slackClient = new SlackServiceBuilder()
                     .UseApiToken(token)
                     .GetApiClient();
