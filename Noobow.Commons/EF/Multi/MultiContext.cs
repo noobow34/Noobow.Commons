@@ -25,13 +25,8 @@ public partial class MultiContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
-        var connectionStringBaes = config.GetConnectionString("MultiConnection");
-        var connectionString = new NpgsqlConnectionStringBuilder(connectionStringBaes)
-        {
-            Password = Environment.GetEnvironmentVariable("PG_NOOBOW_PASSWORD")
-        };
-        optionsBuilder.UseNpgsql(connectionString.ConnectionString);
+        string connectionString = Environment.GetEnvironmentVariable("MULTI_CONNECTION_STRING") ?? "";
+        optionsBuilder.UseNpgsql(connectionString);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
