@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Noobow.Commons.Constants;
+using Npgsql;
 
 namespace Noobow.Commons.EF.Multi;
 
@@ -25,8 +26,12 @@ public partial class MultiContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var config = new ConfigurationBuilder().SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json").Build();
-        var connectionString = config.GetConnectionString("MultiConnection");
-        optionsBuilder.UseNpgsql(connectionString);
+        var connectionStringBaes = config.GetConnectionString("MultiConnection");
+        var connectionString = new NpgsqlConnectionStringBuilder(connectionStringBaes)
+        {
+            Password = Environment.GetEnvironmentVariable("PG_NOOBOW_PASSWORD")
+        };
+        optionsBuilder.UseNpgsql(connectionString.ConnectionString);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
