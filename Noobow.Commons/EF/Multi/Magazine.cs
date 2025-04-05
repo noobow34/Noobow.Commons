@@ -21,9 +21,8 @@ namespace Noobow.Commons.EF.Multi
         [Column("offset_month")]
         public int OffsetMonth { get; set; }
 
-        [ForeignKey("SagamiharaLibraryUserInfo")]
-        [Column("info_id")]
-        public int InfoId { get; set; }
+        [Column("user_info_id")]
+        public int UserInfoId { get; set; }
 
         public List<MagazineSchedule> MagazineSchedules { get; set; } = [];
     }

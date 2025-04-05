@@ -19,4 +19,7 @@ public partial class Book
 
     [Column("lastprocess_date")]
     public DateTime? LastprocessDate { get; set; }
+
+    [Column("user_info_id")]
+    public int UserInfoId { get; set; }
 }
