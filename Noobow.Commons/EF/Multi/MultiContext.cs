@@ -22,6 +22,7 @@ public partial class MultiContext : DbContext
     public virtual DbSet<MegalosUserInfo> MegalosUserInfos { get; set; }
     public virtual DbSet<SchedulerJob> SchedulerJobs { get; set; }
     public virtual DbSet<SchedulerSchedule> SchedulerSchedules { get; set; }
+    public virtual DbSet<SagamiharaLibraryUserInfo> SagamiharaLibraryUserInfos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
