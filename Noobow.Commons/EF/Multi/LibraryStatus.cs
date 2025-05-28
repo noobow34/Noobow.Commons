@@ -31,5 +31,8 @@ namespace Noobow.Commons.EF.Multi
 
         [Column("reservation_status_changed_at")]
         public DateTime? ReservationStatusChangedAt { get; set; }
+
+        [Column("registered_at")]
+        public DateTime? RegisteredAt { get; set; }
     }
 }
