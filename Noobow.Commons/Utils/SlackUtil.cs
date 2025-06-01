@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using SlackNet;
+﻿using SlackNet;
 
 namespace Noobow.Commons.Utils
 {

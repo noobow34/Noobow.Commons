@@ -1,8 +1,6 @@
 ﻿using EnumStringValues;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Noobow.Commons.Constants;
-using Npgsql;
 
 namespace Noobow.Commons.EF.Multi;
 
