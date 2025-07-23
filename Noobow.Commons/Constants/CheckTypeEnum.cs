@@ -11,6 +11,9 @@ namespace Noobow.Commons.Constants
         LastModified,
 
         [StringValue("3")]
-        HtmlHash
+        HtmlHash,
+
+        [StringValue("4")]
+        Xpath
     }
 }

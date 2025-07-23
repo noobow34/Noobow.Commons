@@ -32,5 +32,8 @@ namespace Noobow.Commons.EF.Multi
 
         [Column("schedule")]
         public string? Schedule { get; set; }
+
+        [Column("xpath")]
+        public string? Xpath { get; set; }
     }
 }
