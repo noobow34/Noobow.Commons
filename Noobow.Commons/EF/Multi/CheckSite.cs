@@ -35,5 +35,11 @@ namespace Noobow.Commons.EF.Multi
 
         [Column("xpath")]
         public string? Xpath { get; set; }
+
+        [Column("enabled")]
+        public bool Enabled { get; set; } = true;
+
+        [Column("terminate_text")]
+        public string? TerminateText { get; set; }
     }
 }
