@@ -24,7 +24,6 @@ public partial class MultiContext : DbContext
     public virtual DbSet<BloodDonationUserInfo> BloodDonationUserInfos { get; set; }
     public virtual DbSet<BloodDonationCenter> BloodDonationCenters { get; set; }
     public virtual DbSet<BloodDonationReserveCheck> BloodDonationReserveChecks { get; set; }
-    public virtual DbSet<VisitStamp> VisitStamps { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         string connectionString = Environment.GetEnvironmentVariable("MULTI_CONNECTION_STRING") ?? "";
