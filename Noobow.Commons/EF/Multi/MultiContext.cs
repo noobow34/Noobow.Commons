@@ -25,6 +25,10 @@ public partial class MultiContext : DbContext
     public virtual DbSet<BloodDonationCenter> BloodDonationCenters { get; set; }
     public virtual DbSet<BloodDonationReserveCheck> BloodDonationReserveChecks { get; set; }
     public virtual DbSet<RadioTaisoHistory> RadioTaisoHistories { get; set; }
+    public virtual DbSet<YogaChannel> YogaChannels { get; set; }
+    public virtual DbSet<YogaVideo> YogaVideos { get; set; }
+    public virtual DbSet<YogaHistory> YogaHistories { get; set; }
+    public virtual DbSet<YogaSetting> YogaSettings { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         string connectionString = Environment.GetEnvironmentVariable("MULTI_CONNECTION_STRING") ?? "";
@@ -49,6 +53,16 @@ public partial class MultiContext : DbContext
         modelBuilder.Entity<BloodDonationReserveCheck>()
            .Property(c => c.CheckType)
            .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<BloodDonationCheckTypeEnum>());
+
+        modelBuilder.Entity<YogaVideo>()
+            .HasOne(v => v.YogaChannel)
+            .WithMany(c => c.YogaVideos)
+            .HasForeignKey(v => v.YogaChannelId);
+
+        modelBuilder.Entity<YogaHistory>()
+            .HasOne(h => h.YogaVideo)
+            .WithMany(v => v.YogaHistories)
+            .HasForeignKey(h => h.YogaVideoId);
 
         OnModelCreatingPartial(modelBuilder);
     }
