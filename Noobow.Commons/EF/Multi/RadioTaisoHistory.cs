@@ -18,32 +18,13 @@ public class RadioTaisoHistory
     [Column("selected_date")]
     public DateOnly SelectedDate { get; set; }
 
-    /// <summary>YouTubeチャンネルID</summary>
-    [Column("channel_id")]
-    [MaxLength(100)]
-    public string ChannelId { get; set; } = string.Empty;
-
-    /// <summary>YouTubeチャンネル名</summary>
-    [Column("channel_title")]
-    [MaxLength(200)]
-    public string ChannelTitle { get; set; } = string.Empty;
-
-    /// <summary>動画ID（カンマ区切りで複数可）</summary>
-    [Column("video_ids")]
-    [MaxLength(500)]
-    public string VideoIds { get; set; } = string.Empty;
-
-    /// <summary>動画タイトル（カンマ区切りで複数可）</summary>
-    [Column("video_titles")]
-    [MaxLength(1000)]
-    public string VideoTitles { get; set; } = string.Empty;
-
-    /// <summary>含まれているラジオ体操の番号（例: "1,2,3"）</summary>
-    [Column("taiso_numbers")]
-    [MaxLength(10)]
-    public string TaisoNumbers { get; set; } = string.Empty;
+    /// <summary>動画キャッシュへの外部キー</summary>
+    [Column("radio_taiso_video_id")]
+    public int RadioTaisoVideoId { get; set; }
 
     /// <summary>登録日時</summary>
     [Column("created_at")]
     public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+    public RadioTaisoVideo? RadioTaisoVideo { get; set; }
 }

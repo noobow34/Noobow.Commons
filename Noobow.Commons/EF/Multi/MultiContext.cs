@@ -25,6 +25,8 @@ public partial class MultiContext : DbContext
     public virtual DbSet<BloodDonationCenter> BloodDonationCenters { get; set; }
     public virtual DbSet<BloodDonationReserveCheck> BloodDonationReserveChecks { get; set; }
     public virtual DbSet<RadioTaisoHistory> RadioTaisoHistories { get; set; }
+    public virtual DbSet<RadioTaisoVideo> RadioTaisoVideos { get; set; }
+    public virtual DbSet<RadioTaisoSetting> RadioTaisoSettings { get; set; }
     public virtual DbSet<YogaChannel> YogaChannels { get; set; }
     public virtual DbSet<YogaVideo> YogaVideos { get; set; }
     public virtual DbSet<YogaHistory> YogaHistories { get; set; }
@@ -53,6 +55,11 @@ public partial class MultiContext : DbContext
         modelBuilder.Entity<BloodDonationReserveCheck>()
            .Property(c => c.CheckType)
            .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<BloodDonationCheckTypeEnum>());
+
+        modelBuilder.Entity<RadioTaisoHistory>()
+            .HasOne(h => h.RadioTaisoVideo)
+            .WithMany(v => v.RadioTaisoHistories)
+            .HasForeignKey(h => h.RadioTaisoVideoId);
 
         modelBuilder.Entity<YogaVideo>()
             .HasOne(v => v.YogaChannel)
