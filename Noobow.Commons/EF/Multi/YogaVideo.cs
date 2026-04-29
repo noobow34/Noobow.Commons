@@ -40,6 +40,10 @@ public class YogaVideo
     [Column("fetched_at")]
     public DateTime FetchedAt { get; set; } = DateTime.Now;
 
+    /// <summary>選出対象から除外フラグ</summary>
+    [Column("excluded")]
+    public bool Excluded { get; set; } = false;
+
     public YogaChannel? YogaChannel { get; set; }
     public List<YogaHistory> YogaHistories { get; set; } = [];
 }

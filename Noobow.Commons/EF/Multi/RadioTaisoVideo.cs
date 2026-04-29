@@ -56,5 +56,9 @@ public class RadioTaisoVideo
     [Column("fetched_at")]
     public DateTime FetchedAt { get; set; } = DateTime.Now;
 
+    /// <summary>選出対象から除外フラグ</summary>
+    [Column("excluded")]
+    public bool Excluded { get; set; } = false;
+
     public List<RadioTaisoHistory> RadioTaisoHistories { get; set; } = [];
 }
