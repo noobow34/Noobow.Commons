@@ -60,5 +60,9 @@ public class RadioTaisoVideo
     [Column("excluded")]
     public bool Excluded { get; set; } = false;
 
+    /// <summary>チャンネル単位で除外フラグ（同チャンネルの動画収集・選出を全てスキップ）</summary>
+    [Column("channel_excluded")]
+    public bool ChannelExcluded { get; set; } = false;
+
     public List<RadioTaisoHistory> RadioTaisoHistories { get; set; } = [];
 }
