@@ -27,6 +27,7 @@ public partial class MultiContext : DbContext
     public virtual DbSet<RadioTaisoHistory> RadioTaisoHistories { get; set; }
     public virtual DbSet<RadioTaisoVideo> RadioTaisoVideos { get; set; }
     public virtual DbSet<RadioTaisoSetting> RadioTaisoSettings { get; set; }
+    public virtual DbSet<RadioTaisoNoTaisoVideo> RadioTaisoNoTaisoVideos { get; set; }  // ラジオ体操なし判定済み動画ID（再収集防止リスト）
     public virtual DbSet<YogaChannel> YogaChannels { get; set; }
     public virtual DbSet<YogaVideo> YogaVideos { get; set; }
     public virtual DbSet<YogaHistory> YogaHistories { get; set; }
