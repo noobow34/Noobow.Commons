@@ -43,6 +43,10 @@ public class RadioTaisoVideo
     [Column("view_count")]
     public long ViewCount { get; set; }
 
+    /// <summary>動画時間（秒）</summary>
+    [Column("duration_seconds")]
+    public int DurationSeconds { get; set; } = 0;
+
     /// <summary>含まれる体操番号（例: "1,2,3"）Gemini判定結果。未判定は空文字</summary>
     [Column("taiso_numbers")]
     [MaxLength(10)]
