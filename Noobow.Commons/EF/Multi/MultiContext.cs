@@ -33,9 +33,6 @@ public partial class MultiContext : DbContext
     public virtual DbSet<YogaHistory> YogaHistories { get; set; }
     public virtual DbSet<YogaSetting> YogaSettings { get; set; }
     public DbSet<StampCard> StampCards { get; set; }
-    public DbSet<KenketsuRecord> KenketsuRecords { get; set; }
-    public DbSet<KenketsuSetting> KenketsuSettings { get; set; }
-    public DbSet<KenketsuRestriction> KenketsuRestrictions { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         string connectionString = Environment.GetEnvironmentVariable("MULTI_CONNECTION_STRING") ?? "";
