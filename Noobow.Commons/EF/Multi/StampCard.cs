@@ -28,4 +28,9 @@ public class StampCard
 
     [Column("created_at")]
     public DateTime CreatedAt { get; set; }
+
+    /// <summary>スタンプが押せなかった理由（is_manual=false 行にのみ設定）</summary>
+    [Column("reason")]
+    [MaxLength(500)]
+    public string? Reason { get; set; }
 }
