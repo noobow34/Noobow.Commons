@@ -23,5 +23,8 @@ namespace Noobow.Commons.EF.Multi
 
         [Column("kind_id")]
         public required string KindId { get; set; }
+
+        [Column("is_deleted")]
+        public bool IsDeleted { get; set; } = false;
     }
 }
