@@ -1,11 +1,13 @@
 ﻿using SlackNet;
+using SlackNet.Blocks;
 
 namespace Noobow.Commons.Utils
 {
     public static class SlackUtil
     {
         private static ISlackApiClient? _slackClient;
-        public static async Task PostAsync(string channel, string text)
+
+        private static ISlackApiClient GetClient()
         {
             if (_slackClient == null)
             {
@@ -14,7 +16,17 @@ namespace Noobow.Commons.Utils
                     .UseApiToken(token)
                     .GetApiClient();
             }
-            await _slackClient.Chat.PostMessage(new SlackNet.WebApi.Message { Text = text, Channel = channel });
+            return _slackClient;
+        }
+
+        public static async Task PostAsync(string channel, string text)
+        {
+            await GetClient().Chat.PostMessage(new SlackNet.WebApi.Message { Text = text, Channel = channel });
+        }
+
+        public static async Task PostAsync(string channel, string text, IList<Block> blocks)
+        {
+            await GetClient().Chat.PostMessage(new SlackNet.WebApi.Message { Text = text, Channel = channel, Blocks = blocks });
         }
     }
 }
