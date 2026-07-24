@@ -20,4 +20,8 @@ public class RadioTaisoSetting
     /// <summary>動画被り防止日数</summary>
     [Column("video_avoid_days")]
     public int VideoAvoidDays { get; set; } = 30;
+
+    /// <summary>AI判定に使用するGeminiモデル名</summary>
+    [Column("gemini_model")]
+    public string GeminiModel { get; set; } = "gemini-3.5-flash-lite";
 }
