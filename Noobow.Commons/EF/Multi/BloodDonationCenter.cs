@@ -18,6 +18,10 @@ namespace Noobow.Commons.EF.Multi
         [Column("place_id")]
         public string? PlaceId { get; set; }
 
+        /// <summary>所在都道府県（例：東京都）。画面のグループ表示・一括選択に使う。</summary>
+        [Column("prefecture")]
+        public string? Prefecture { get; set; }
+
         public virtual List<BloodDonationReserveCheck> BloodDonationReserveChecks { get; set; } = [];
     }
 }
