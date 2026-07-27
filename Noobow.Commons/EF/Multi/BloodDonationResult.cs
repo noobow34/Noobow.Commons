@@ -14,12 +14,6 @@ namespace Noobow.Commons.EF.Multi
         [Column("donated_on")]
         public required DateOnly DonatedOn { get; set; }
 
-        [Column("kind")]
-        public string? Kind { get; set; }
-
-        [Column("place")]
-        public string? Place { get; set; }
-
         [Column("status")]
         public required string Status { get; set; } = "pending";
 
