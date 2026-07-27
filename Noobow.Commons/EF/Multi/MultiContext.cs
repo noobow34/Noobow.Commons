@@ -24,6 +24,8 @@ public partial class MultiContext : DbContext
     public virtual DbSet<BloodDonationUserInfo> BloodDonationUserInfos { get; set; }
     public virtual DbSet<BloodDonationCenter> BloodDonationCenters { get; set; }
     public virtual DbSet<BloodDonationReserveCheck> BloodDonationReserveChecks { get; set; }
+    public virtual DbSet<BloodDonationResult> BloodDonationResults { get; set; }
+    public virtual DbSet<BloodDonationResultItem> BloodDonationResultItems { get; set; }
     public virtual DbSet<RadioTaisoHistory> RadioTaisoHistories { get; set; }
     public virtual DbSet<RadioTaisoVideo> RadioTaisoVideos { get; set; }
     public virtual DbSet<RadioTaisoSetting> RadioTaisoSettings { get; set; }
@@ -58,6 +60,15 @@ public partial class MultiContext : DbContext
         modelBuilder.Entity<BloodDonationReserveCheck>()
            .Property(c => c.CheckType)
            .HasConversion(v => v.GetStringValue(), v => ((string)v).ParseToEnum<BloodDonationCheckTypeEnum>());
+
+        modelBuilder.Entity<BloodDonationResultItem>()
+            .HasKey(x => new { x.DonatedOn, x.Item });
+
+        modelBuilder.Entity<BloodDonationResultItem>()
+            .HasOne(x => x.BloodDonationResult)
+            .WithMany(x => x.Items)
+            .HasForeignKey(x => x.DonatedOn)
+            .HasPrincipalKey(r => r.DonatedOn);
 
         modelBuilder.Entity<RadioTaisoHistory>()
             .HasOne(h => h.RadioTaisoVideo)

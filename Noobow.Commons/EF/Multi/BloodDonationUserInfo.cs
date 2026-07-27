@@ -20,5 +20,8 @@ namespace Noobow.Commons.EF.Multi
 
         [Column("name")]
         public required string Name { get; set; }
+
+        [Column("pin")]
+        public string? Pin { get; set; }
     }
 }
