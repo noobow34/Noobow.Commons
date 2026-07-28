@@ -5,10 +5,10 @@ namespace Noobow.Commons.Constants
 {
     public enum BloodDonationCheckTypeEnum
     {
-        [Description("以前")]
+        [Description("より前")]
         [StringValue("1")]
         BeforeAll,
-        [Description("以後")]
+        [Description("より後")]
         [StringValue("2")]
         AfterAll,
         [Description("ジャスト")]
