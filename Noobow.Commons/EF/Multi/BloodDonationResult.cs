@@ -14,6 +14,10 @@ namespace Noobow.Commons.EF.Multi
         [Column("donated_on")]
         public required DateOnly DonatedOn { get; set; }
 
+        /// <summary>献血ルーム名。KenketsuNote（RoomName）由来。</summary>
+        [Column("place")]
+        public string? Place { get; set; }
+
         [Column("status")]
         public required string Status { get; set; } = "pending";
 
