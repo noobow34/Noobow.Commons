@@ -24,6 +24,8 @@ public partial class MultiContext : DbContext
     public virtual DbSet<BloodDonationUserInfo> BloodDonationUserInfos { get; set; }
     public virtual DbSet<BloodDonationCenter> BloodDonationCenters { get; set; }
     public virtual DbSet<BloodDonationReserveCheck> BloodDonationReserveChecks { get; set; }
+    public virtual DbSet<BloodDonationAvailabilitySetting> BloodDonationAvailabilitySettings { get; set; }  // 献血空き横断検索の前回検索条件（1行のみ）
+    public virtual DbSet<BloodDonationCenterPreset> BloodDonationCenterPresets { get; set; }  // 献血空き横断検索の名前付きルーム選択セット
     public virtual DbSet<BloodDonationResult> BloodDonationResults { get; set; }
     public virtual DbSet<BloodDonationResultItem> BloodDonationResultItems { get; set; }
     public virtual DbSet<RadioTaisoHistory> RadioTaisoHistories { get; set; }

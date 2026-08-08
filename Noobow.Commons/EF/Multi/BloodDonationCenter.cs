@@ -22,6 +22,14 @@ namespace Noobow.Commons.EF.Multi
         [Column("prefecture")]
         public string? Prefecture { get; set; }
 
+        /// <summary>
+        /// 血小板献血の取り扱いがないルームか。
+        /// 先方ページは「取扱なし」も「その日満枠」も同じくタブ非活性になるため、
+        /// HTMLからは区別できない。恒常的に取り扱いがないルームだけこのフラグで持つ。
+        /// </summary>
+        [Column("no_platelet")]
+        public bool NoPlatelet { get; set; } = false;
+
         public virtual List<BloodDonationReserveCheck> BloodDonationReserveChecks { get; set; } = [];
     }
 }
