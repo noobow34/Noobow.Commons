@@ -17,6 +17,8 @@ namespace Noobow.Commons.Constants
         [StringValue("C0876AN1RNE")]
         TwilogUpdater,
         [StringValue("C0BKZ796H37")]
-        kenketsuLabResult
+        kenketsuLabResult,
+        [StringValue("C086ZTR3NUE")]
+        serverAdmin
     }
 }
